@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fuera de pista · Black Furia</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0C">
+<script>
+  /* Esta página se sirve en cualquier dirección que no exista (p. ej. /algo/que/no/existe),
+     así que fijamos la raíz de la web para que estilos, fuentes e imágenes carguen siempre.
+     En GitHub Pages de proyecto la raíz es /nombre-del-repo/; con dominio propio es /. */
+  (function () {
+    var root = '/';
+    var seg = location.pathname.split('/')[1] || '';
+    if (/\.github\.io$/.test(location.hostname) && seg && seg.indexOf('.') < 0) root = '/' + seg + '/';
+    var base = document.createElement('base');
+    base.href = root;
+    document.head.appendChild(base);
+  })();
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+  .lost{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr;overflow:hidden;
+    background:var(--ink) url("assets/img/carbon-tile.png") repeat}
+  .lost::before{content:"";position:absolute;right:-8%;top:50%;width:min(70vw,820px);aspect-ratio:1478/1250;transform:translateY(-50%);
+    background:url("assets/img/bf-symbol-white.svg") center/contain no-repeat;opacity:.045;pointer-events:none}
+  .lost__top{position:relative;padding-block:calc(env(safe-area-inset-top,0px) + 20px) 0}
+  .lost__inner{position:relative;align-self:center;padding-block:clamp(3rem,10vh,6rem)}
+  .lost__brand{display:inline-block;line-height:0}
+  .lost__brand img{height:34px;width:auto}
+  .lost__code{font-family:var(--font-display);font-style:italic;font-weight:900;font-stretch:125%;line-height:.8;
+    font-size:clamp(6rem,22vw,15rem);color:transparent;-webkit-text-stroke:2px rgba(242,242,244,.16);margin:0 0 .15em}
+  .lost .lead{max-width:34rem;margin:1.25rem 0 2.25rem}
+</style>
+</head>
+<body>
+<main class="lost">
+  <div class="wrap lost__top"><a class="lost__brand" href="./" aria-label="Black Furia, ir al inicio"><img src="assets/img/bf-lockup.svg" alt="" width="184" height="52"></a></div>
+  <div class="wrap lost__inner">
+    <p class="lost__code" aria-hidden="true">404</p>
+    <p class="label">Error 404</p>
+    <h1 class="h2">Fuera de <span class="red">pista</span></h1>
+    <p class="lead">Esta página no existe o ha cambiado de sitio. Vuelve a boxes y sigue desde el inicio.</p>
+    <a class="btn" href="./"><span>Volver al inicio</span></a>
+  </div>
+</main>
+</body>
+</html>
