@@ -16,6 +16,7 @@ assets/fonts/         tipografías (Saira y Barlow), ya incluidas
 favicon.*, icon-*, apple-touch-icon.png, site.webmanifest   iconos de la pestaña y del móvil
 robots.txt            permite que Google indexe la web
 netlify.toml          configuración de Netlify (no hay que tocarla)
+sitemap.xml           mapa de la web para Google
 ```
 
 ## Verla en tu ordenador
@@ -66,23 +67,24 @@ La foto sale en blanco y negro para que todas queden iguales, y tapa sola la let
 
 ## Publicación: GitHub + Netlify
 
-La web vive en el repositorio `black-furia` de GitHub. Netlify está conectado a ese repositorio: cada vez que se sube un cambio a la rama `main`, vuelve a publicar la web sola.
+La web está en **https://blackfuria.netlify.app/**. El código vive en el repositorio `black-furia` de GitHub y Netlify está conectado a él: cada vez que se sube un cambio a la rama `main`, vuelve a publicar la web sola en uno o dos minutos.
 
-**Conectar Netlify (solo la primera vez):**
+**Si algún día hay que volver a conectar Netlify:**
 
 1. Entra en https://app.netlify.com con tu cuenta de GitHub.
-2. *Add new site → Import an existing project → GitHub* y elige el repositorio `black-furia`.
+2. *Add new project → Import an existing project → GitHub* y elige el repositorio `black-furia`.
 3. Deja *Build command* vacío y *Publish directory* en `.` (el archivo `netlify.toml` ya lo indica).
-4. Pulsa *Deploy*. En un minuto tendrás una dirección del tipo `https://nombre.netlify.app`. En *Site configuration → Change site name* puedes cambiarla, por ejemplo a `black-furia.netlify.app`.
+4. Pulsa *Deploy*. El nombre de la dirección se cambia en *Project configuration → Change project name*.
 
 **Dominio propio** (por ejemplo `blackfuria.es`): cuesta unos 10 € al año y lo tiene que comprar un adulto. Después se conecta en Netlify, en *Domain management → Add a domain*.
 
-## Cuando ya tengáis la dirección definitiva
+## Si cambia la dirección de la web
 
-En `index.html`, dentro de `<head>`:
+La dirección `https://blackfuria.netlify.app/` aparece en varios sitios. Si pasáis a un dominio propio, cámbiala en todos ellos:
 
-1. Cambia `og:image` por la dirección completa, por ejemplo `https://blackfuria.es/assets/img/og-black-furia.jpg`. Así sale la imagen al compartir el enlace en WhatsApp, Instagram o LinkedIn.
-2. Añade debajo `<meta property="og:url" content="https://blackfuria.es/">` y `<link rel="canonical" href="https://blackfuria.es/">`.
+1. `index.html`, dentro de `<head>`: `og:url`, `og:image` y `canonical` (así sale bien la imagen al compartir el enlace en WhatsApp, Instagram o LinkedIn).
+2. `index.html`, en el bloque `application/ld+json`: `url` y `logo`.
+3. `robots.txt` y `sitemap.xml`.
 
 ## Normas del equipo para la web
 
